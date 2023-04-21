@@ -1,91 +1,131 @@
 //login screen implementation with firebase authentication
+// ignore_for_file: prefer_const_constructors
+
+import 'package:diet_app/Screens/second_login.dart';
+import 'package:diet_app/Screens/signupScreen.dart';
 import 'package:flutter/material.dart';
-import 'signupScreen.dart';
-import 'second_login.dart';
 
 class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              SizedBox(height: 32),
-              Text(
-                'Welcome to',
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                ),
+      backgroundColor: Color(0xffFFF3D2),
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(height: MediaQuery.of(context).size.height * 0.2),
+            Text(
+              'Welcome',
+              style: TextStyle(
+                fontSize: 32,
               ),
-              SizedBox(height: 16),
-              Text(
-                'Fitofun',
-                style: TextStyle(
-                  fontSize: 48,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.green[800],
-                ),
+            ),
+            SizedBox(height: 16),
+            Text(
+              'to',
+              style: TextStyle(
+                fontSize: 32,
               ),
-              SizedBox(height: 48),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => SecondLoginScreen()),
-                  );
-                  // TODO: Implement login functionality
-                },
-                child: Text(
-                  'Login',
+            ),
+            SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Fit ",
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 48,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.green[800],
-                  padding: EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
+                Text(
+                  "'O'",
+                  style: TextStyle(
+                    fontSize: 48,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.green[800],
                   ),
+                ),
+                Text(
+                  " Fun",
+                  style: TextStyle(
+                    fontSize: 48,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SecondLoginScreen()),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                foregroundColor: Colors.black,
+                backgroundColor: Color(0xffFFB3B3),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(32.0),
                 ),
               ),
-              SizedBox(height: 16),
-              OutlinedButton(
+              child: const Text('Login'),
+            ),
+            SizedBox(height: 16),
+            ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => SignupPage()),
                   );
-                  // TODO: Implement sign up functionality
                 },
-                child: Text(
-                  'Sign up',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.green[800],
-                  ),
-                ),
-                style: OutlinedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(vertical: 16),
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 35, vertical: 10),
+                  foregroundColor: Colors.black,
+                  elevation: 0,
+                  backgroundColor: Color(0xffFFF3D2),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  side: BorderSide(
-                    width: 2,
-                    color: Colors.green[800]!,
+                    side: BorderSide(color: Colors.black),
+                    borderRadius: BorderRadius.circular(32.0),
                   ),
                 ),
-              ),
-            ],
-          ),
+                child: Text('Sign Up')),
+            SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Expanded(
+                  child: Divider(
+                    color: Colors.black,
+                    thickness: .3,
+                  ),
+                ),
+                SizedBox(width: 20),
+                Text('OR'),
+                SizedBox(width: 20),
+                Expanded(
+                  child: Divider(
+                    color: Colors.black,
+                    thickness: .3,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 16),
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.phone,
+                  size: 30,
+                )),
+          ],
         ),
       ),
     );

@@ -1,31 +1,33 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+
 import 'login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _animation;
+  late AnimationController controller;
+  late Animation<double> animation;
 
   @override
   void initState() {
     super.initState();
-
-    // Initialize animation controller
-    _controller = AnimationController(
-      duration: Duration(seconds: 4),
+    controller = AnimationController(
+      duration: const Duration(seconds: 4),
       vsync: this,
     );
 
     // Define animation
-    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeInOut);
-
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeInOut);
     // Start animation
-    _controller.forward().whenComplete(() {
+    controller.forward().whenComplete(() {
       // Navigate to login screen when animation finishes
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (BuildContext context) => LoginScreen()),
@@ -35,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void dispose() {
-    _controller.dispose();
+    controller.dispose();
     super.dispose();
   }
 
@@ -67,18 +69,18 @@ class _SplashScreenState extends State<SplashScreen>
             style: TextStyle(
               fontSize: 48,
               fontWeight: FontWeight.bold,
-              color: Colors.green[800],
+              color: Colors.green,
             ),
           ),
           SizedBox(height: 32),
           AnimatedBuilder(
-            animation: _animation,
+            animation: animation,
             builder: (BuildContext context, Widget? child) {
               return Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Transform.translate(
-                    offset: Offset(-100 + 100 * _animation.value, 0),
+                    offset: Offset(-100 + 100 * animation.value, 0),
                     child: Image.asset(
                       'assets/fruit1.png',
                       width: 200,
@@ -87,7 +89,7 @@ class _SplashScreenState extends State<SplashScreen>
                   ),
                   SizedBox(width: 64),
                   Transform.translate(
-                    offset: Offset(100 - 100 * _animation.value, 0),
+                    offset: Offset(100 - 100 * animation.value, 0),
                     child: Image.asset(
                       'assets/fruit2.png',
                       width: 120,
