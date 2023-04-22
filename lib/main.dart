@@ -1,6 +1,5 @@
-import 'package:diet_app/Screens/splash_scren.dart';
+import 'package:diet_app/screens/signup/signup.dart';
 import 'package:flutter/material.dart';
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SplashScreen(),
+      home: const SignupPage(),
     );
   }
 }

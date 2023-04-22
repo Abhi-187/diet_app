@@ -1,9 +1,10 @@
 //login screen implementation with firebase authentication
 // ignore_for_file: prefer_const_constructors
 
-import 'package:diet_app/Screens/second_login.dart';
-import 'package:diet_app/Screens/signupScreen.dart';
+import 'package:diet_app/screens/login/phonenumber.dart';
 import 'package:flutter/material.dart';
+
+import '../signup/signup.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -15,70 +16,66 @@ class LoginScreen extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height * 0.2),
+            SizedBox(height: 178),
             Text(
               'Welcome',
-              style: TextStyle(
-                fontSize: 32,
-              ),
+              style: TextStyle(fontSize: 32, fontWeight: FontWeight.w400),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 20),
             Text(
               'to',
-              style: TextStyle(
-                fontSize: 32,
-              ),
+              style: TextStyle(fontSize: 32, fontWeight: FontWeight.w400),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 Text(
-                  "Fit ",
+                  "Fit",
                   style: TextStyle(
-                    fontSize: 48,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 54,
+                    fontWeight: FontWeight.w500,
                     color: Colors.black,
                   ),
                 ),
                 Text(
                   "'O'",
                   style: TextStyle(
-                    fontSize: 48,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.green[800],
+                    fontSize: 54,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xffFE8A8A),
                   ),
                 ),
                 Text(
-                  " Fun",
+                  "Fun",
                   style: TextStyle(
-                    fontSize: 48,
-                    fontWeight: FontWeight.bold,
+                    fontSize: 54,
+                    fontWeight: FontWeight.w500,
                     color: Colors.black,
                   ),
                 ),
               ],
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+            SizedBox(height: 94),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const SecondLoginScreen()),
+                      builder: (context) => const PhoneNumberScreen()),
                 );
               },
               style: ElevatedButton.styleFrom(
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                padding: EdgeInsets.symmetric(horizontal: 60, vertical: 15),
                 foregroundColor: Colors.black,
                 backgroundColor: Color(0xffFFB3B3),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(32.0),
+                  borderRadius: BorderRadius.circular(40.0),
                 ),
               ),
               child: const Text('Login'),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 43),
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -87,7 +84,7 @@ class LoginScreen extends StatelessWidget {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(horizontal: 35, vertical: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                   foregroundColor: Colors.black,
                   elevation: 0,
                   backgroundColor: Color(0xffFFF3D2),
@@ -97,7 +94,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
                 child: Text('Sign Up')),
-            SizedBox(height: 16),
+            SizedBox(height: 66),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
@@ -118,13 +115,20 @@ class LoginScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 16),
-            IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.phone,
-                  size: 30,
-                )),
+            SizedBox(height: 34),
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                width: 60.0,
+                height: 60.0,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/logo.png'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

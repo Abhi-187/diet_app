@@ -1,34 +1,26 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-
-import 'login_screen.dart';
-
+import 'login/login.dart';
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
-
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<double> animation;
-
   @override
   void initState() {
     super.initState();
     controller = AnimationController(
-      duration: const Duration(seconds: 4),
+      duration: const Duration(seconds: 3),
       vsync: this,
     );
-
-    // Define animation
     animation = CurvedAnimation(parent: controller, curve: Curves.easeInOut);
-    // Start animation
     controller.forward().whenComplete(() {
-      // Navigate to login screen when animation finishes
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (BuildContext context) => LoginScreen()),
       );
@@ -44,35 +36,54 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xffFFF3D2),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          SizedBox(height: 173,),
           Text(
             'Welcome',
             style: TextStyle(
-              fontSize: 32,
-              fontWeight: FontWeight.bold,
+              fontSize: 32, fontWeight: FontWeight.w400
             ),
           ),
-          SizedBox(height: 16),
+          SizedBox(height: 20),
           Text(
             'to',
             style: TextStyle(
-              fontSize: 32,
-              fontWeight: FontWeight.bold,
+              fontSize: 32, fontWeight: FontWeight.w400
             ),
           ),
-          SizedBox(height: 16),
-          Text(
-            "Fit 'o' Fun",
-            style: TextStyle(
-              fontSize: 48,
-              fontWeight: FontWeight.bold,
-              color: Colors.green,
+          SizedBox(height: 20),
+          Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const[
+                Text(
+                  "Fit ",
+                  style: TextStyle(
+                    fontSize: 54,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black,
+                  ),
+                ),
+                Text(
+                  "'O'",
+                  style: TextStyle(
+                    fontSize: 54,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xffFE8A8A),
+                  ),
+                ),
+                Text(
+                  " Fun",
+                  style: TextStyle(
+                    fontSize: 54,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
             ),
-          ),
-          SizedBox(height: 32),
+          SizedBox(height: 35),
           AnimatedBuilder(
             animation: animation,
             builder: (BuildContext context, Widget? child) {
@@ -82,16 +93,15 @@ class _SplashScreenState extends State<SplashScreen>
                   Transform.translate(
                     offset: Offset(-100 + 100 * animation.value, 0),
                     child: Image.asset(
-                      'assets/fruit1.png',
+                      'assets/01.png',
                       width: 200,
                       height: 200,
                     ),
                   ),
-                  SizedBox(width: 64),
                   Transform.translate(
                     offset: Offset(100 - 100 * animation.value, 0),
                     child: Image.asset(
-                      'assets/fruit2.png',
+                      'assets/02.png',
                       width: 120,
                       height: 120,
                     ),
