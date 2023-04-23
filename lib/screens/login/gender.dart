@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:diet_app/screens/bottombar.dart';
 import 'package:flutter/material.dart';
 
 class GenderScreen extends StatelessWidget {
@@ -63,7 +64,27 @@ class GenderScreen extends StatelessWidget {
                 child: Image.asset("assets/girl.png"),
               ),
             ],
-          )
+          ),
+          SizedBox(
+            height: 200,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const BottomBar()),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              padding: EdgeInsets.symmetric(horizontal: 60, vertical: 15),
+              foregroundColor: Colors.black,
+              backgroundColor: Color(0xffFFB3B3),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(40.0),
+              ),
+            ),
+            child: const Text('Login'),
+          ),
         ],
       ),
     );

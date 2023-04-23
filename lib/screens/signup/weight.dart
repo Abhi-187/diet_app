@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../bottombar.dart';
+
 class WeightScreen extends StatefulWidget {
   const WeightScreen({super.key});
 
@@ -96,11 +98,11 @@ class _WeightScreenState extends State<WeightScreen> {
             alignment: Alignment.bottomRight,
             child: ElevatedButton(
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //       builder: (context) => const HeightScreen()),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const BottomBar()),
+                );
               },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),

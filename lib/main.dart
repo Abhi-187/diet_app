@@ -1,5 +1,7 @@
-import 'package:diet_app/screens/signup/signup.dart';
+
+import 'package:diet_app/screens/bottombar.dart';
 import 'package:flutter/material.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SignupPage(),
+      home: const BottomBar(),
     );
   }
 }
