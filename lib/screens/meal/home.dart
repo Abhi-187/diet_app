@@ -1,6 +1,4 @@
 // ignore_for_file: prefer_const_constructors, unused_local_variable
-
-import 'package:diet_app/screens/meal/meal.dart';
 import 'package:flutter/material.dart';
 
 import 'option.dart';
@@ -74,8 +72,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           GestureDetector(
-            onTap: (){
-               Navigator.push(
+            onTap: () {
+              Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const OptionScreen()),
               );
@@ -101,63 +99,87 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          Container(
-            width: width,
-            height: 66,
-            margin: EdgeInsets.only(left: 36, right: 36, bottom: 14),
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    colorFilter: ColorFilter.mode(
-                        Colors.black.withOpacity(0.4), BlendMode.dstATop),
-                    image: AssetImage("assets/13.webp"),
-                    fit: BoxFit.cover),
-                border: Border.all(width: .2),
-                color: Color(0xffFFF3D2),
-                borderRadius: BorderRadius.circular(40)),
-            child: Center(
-              child: Text(
-                "Lunch",
-                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const OptionScreen()),
+              );
+            },
+            child: Container(
+              width: width,
+              height: 66,
+              margin: EdgeInsets.only(left: 36, right: 36, bottom: 14),
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      colorFilter: ColorFilter.mode(
+                          Colors.black.withOpacity(0.4), BlendMode.dstATop),
+                      image: AssetImage("assets/13.webp"),
+                      fit: BoxFit.cover),
+                  border: Border.all(width: .2),
+                  color: Color(0xffFFF3D2),
+                  borderRadius: BorderRadius.circular(40)),
+              child: Center(
+                child: Text(
+                  "Lunch",
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+                ),
               ),
             ),
           ),
-          Container(
-            width: width,
-            height: 66,
-            margin: EdgeInsets.only(left: 36, right: 36, bottom: 14),
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    colorFilter: ColorFilter.mode(
-                        Colors.black.withOpacity(0.4), BlendMode.dstATop),
-                    image: AssetImage("assets/13.jpeg"),
-                    fit: BoxFit.cover),
-                border: Border.all(width: .2),
-                color: Color(0xffFFF3D2),
-                borderRadius: BorderRadius.circular(40)),
-            child: Center(
-              child: Text(
-                "Dinner",
-                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const OptionScreen()),
+              );
+            },
+            child: Container(
+              width: width,
+              height: 66,
+              margin: EdgeInsets.only(left: 36, right: 36, bottom: 14),
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      colorFilter: ColorFilter.mode(
+                          Colors.black.withOpacity(0.4), BlendMode.dstATop),
+                      image: AssetImage("assets/13.jpeg"),
+                      fit: BoxFit.cover),
+                  border: Border.all(width: .2),
+                  color: Color(0xffFFF3D2),
+                  borderRadius: BorderRadius.circular(40)),
+              child: Center(
+                child: Text(
+                  "Dinner",
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+                ),
               ),
             ),
           ),
-          Container(
-            width: width,
-            height: 66,
-            margin: EdgeInsets.only(left: 36, right: 36, bottom: 14),
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    colorFilter: ColorFilter.mode(
-                        Colors.black.withOpacity(0.4), BlendMode.dstATop),
-                    image: AssetImage("assets/14.avif"),
-                    fit: BoxFit.cover),
-                border: Border.all(width: .2),
-                color: Color(0xffFFF3D2),
-                borderRadius: BorderRadius.circular(40)),
-            child: Center(
-              child: Text(
-                "Snacks",
-                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const OptionScreen()),
+              );
+            },
+            child: Container(
+              width: width,
+              height: 66,
+              margin: EdgeInsets.only(left: 36, right: 36, bottom: 14),
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      colorFilter: ColorFilter.mode(
+                          Colors.black.withOpacity(0.4), BlendMode.dstATop),
+                      image: AssetImage("assets/14.avif"),
+                      fit: BoxFit.cover),
+                  border: Border.all(width: .2),
+                  color: Color(0xffFFF3D2),
+                  borderRadius: BorderRadius.circular(40)),
+              child: Center(
+                child: Text(
+                  "Snacks",
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+                ),
               ),
             ),
           ),

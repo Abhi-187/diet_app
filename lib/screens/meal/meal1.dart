@@ -1,14 +1,16 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:diet_app/screens/bottombar.dart';
 import 'package:flutter/material.dart';
-class MealScreen extends StatefulWidget {
-  const MealScreen({super.key});
+
+class MealScreen1 extends StatefulWidget {
+  const MealScreen1({super.key});
 
   @override
-  State<MealScreen> createState() => _MealScreenState();
+  State<MealScreen1> createState() => _MealScreen1State();
 }
 
-class _MealScreenState extends State<MealScreen> {
+class _MealScreen1State extends State<MealScreen1> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -98,7 +100,29 @@ class _MealScreenState extends State<MealScreen> {
                   ],
                 ),
               ),
-            )
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const BottomBar()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 60, vertical: 15),
+                  foregroundColor: Colors.black,
+                  backgroundColor: Color(0xffFFB3B3),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40.0),
+                  ),
+                ),
+                child: const Text('Done'),
+              ),
+            ),
           ],
         ),
       ),

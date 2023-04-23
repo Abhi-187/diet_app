@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:diet_app/screens/meal/meal1.dart';
 import 'package:flutter/material.dart';
+
+import 'meal2.dart';
 
 class OptionScreen extends StatelessWidget {
   const OptionScreen({super.key});
@@ -85,19 +88,41 @@ class OptionScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Container(
-                          width: 120,
-                          height: 120,
-                          decoration: BoxDecoration(
-                              color: Color(0xffFFDBA4),
-                              borderRadius: BorderRadius.circular(25)),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const MealScreen1()),
+                            );
+                          },
+                          child: Container(
+                            width: 120,
+                            height: 120,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage("assets/19.png")),
+                                color: Color(0xffFFDBA4),
+                                borderRadius: BorderRadius.circular(25)),
+                          ),
                         ),
-                        Container(
-                          width: 120,
-                          height: 120,
-                          decoration: BoxDecoration(
-                              color: Color(0xffFFDBA4),
-                              borderRadius: BorderRadius.circular(25)),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const MealScreen2()),
+                            );
+                          },
+                          child: Container(
+                            width: 120,
+                            height: 120,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage("assets/22.png")),
+                                color: Color(0xffFFDBA4),
+                                borderRadius: BorderRadius.circular(25)),
+                          ),
                         ),
                       ],
                     ),
@@ -107,26 +132,49 @@ class OptionScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Container(
-                          width: 120,
-                          height: 120,
-                          decoration: BoxDecoration(
-                              color: Color(0xffFFDBA4),
-                              borderRadius: BorderRadius.circular(25)),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const MealScreen2()),
+                            );
+                          },
+                          child: Container(
+                            width: 120,
+                            height: 120,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage("assets/20.png")),
+                                color: Color(0xffFFDBA4),
+                                borderRadius: BorderRadius.circular(25)),
+                          ),
                         ),
-                        Container(
-                          width: 120,
-                          height: 120,
-                          decoration: BoxDecoration(
-                              color: Color(0xffFFDBA4),
-                              borderRadius: BorderRadius.circular(25)),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const MealScreen2()),
+                            );
+                          },
+                          child: Container(
+                            width: 120,
+                            height: 120,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage("assets/21.png")),
+                                color: Color(0xffFFDBA4),
+                                borderRadius: BorderRadius.circular(25)),
+                          ),
                         ),
                       ],
                     ),
                   ],
                 ),
               ),
-            )
+            ),
+            
           ],
         ),
       ),

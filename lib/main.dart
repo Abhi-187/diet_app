@@ -1,5 +1,5 @@
 
-import 'package:diet_app/screens/bottombar.dart';
+import 'package:diet_app/Screens/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const BottomBar(),
+      home: const SplashScreen(),
     );
   }
 }
