@@ -116,6 +116,16 @@ class _DietScreenState extends State<DietScreen> {
               color: Colors.black,
               thickness: .3,
             ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: TextField(
+                maxLines: 5,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                ),
+                
+              ),
+            )
           ],
         ),
       ),
